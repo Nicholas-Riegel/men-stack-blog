@@ -5,10 +5,11 @@ NEW PAGE
 
 <form action="/blog" method="POST">
     <label for="post-title">Title</label><br>
-    <input type="title"><br>
+    <input type="text" id="post-title" name="post-title"><br>
 
     <label for="post-body">Content</label><br>
     <textarea name="post-body" id="post-body" cols="30" rows="10"></textarea><br>
+    <button type="submit ">Submit</button>
 </form>
 
 <%- include('partials/foot')%>

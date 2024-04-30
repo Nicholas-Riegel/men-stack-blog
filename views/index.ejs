@@ -3,4 +3,8 @@
 
 HOME PAGE
 
+<% allPosts.forEach(x=>{ %>
+    <h1><%= x.title%></h1>
+    <p><%= x.body%></p>
+<% }) %>
 <%- include('partials/foot')%>

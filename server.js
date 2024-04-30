@@ -8,6 +8,7 @@ const Post = require('./models/post.js')
 
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride('_method'))
+app.use(express.static(__dirname + '/public'));
 
 mongoose.connect(process.env.MONGODB_URI)
 mongoose.connection.on('connected', ()=>{

@@ -1,11 +1,13 @@
 <%- include('partials/head')%>
 <%- include('partials/nav')%>
 
-<h1 class="text-red-400 underline">HOME PAGE</h1>
+<h1 class="text-center mb-10">HOME PAGE</h1>
 
 
 <% allPosts.forEach(x=>{ %>
-    <h1><a href='/blog/<%= x._id%>'><%= x.title%></a></h1>
+    <div class="post-container rounded bg-white mb-7 w-1/3 mx-auto">
+        <h1 class="text-center"><a href='/blog/<%= x._id%>'>Post title: <%= x.title%></a></h1>
+    </div> 
 <% }) %>
 
 <%- include('partials/foot')%>

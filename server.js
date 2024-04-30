@@ -22,6 +22,9 @@ app.get('/blog/new', (req, res)=>{
 })
 
 // POST	/blog	Create	create	Add a new post to the list.
+app.post('/blog', (req, res)=>{
+    
+})
 
 // GET	/blog/:id	Read	show	Display a specific post’s details.
 

@@ -3,7 +3,7 @@ const app = express()
 require('dotenv').config()
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
-const port = 3000
+const port = 3001
 const Post = require('./models/post.js')
 
 app.use(express.urlencoded({extended: false}))

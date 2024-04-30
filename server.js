@@ -9,7 +9,7 @@ const morgan = require('morgan')
 
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride('_method'))
-app.use(morgan('dev'))
+// app.use(morgan('dev'))
 
 mongoose.connect(process.env.MONGODB_URI)
 mongoose.connection.on('connected', ()=>{
@@ -47,8 +47,18 @@ app.get('/blog/:id', async (req, res) => {
 })
 
 // GET	/blog/:id/edit	Read	edit	Show a form to edit an existing post’s details.
-
+app.get('/blog/:id/edit', async (req, res)=>{
+    const post = await Post.findById(req.params.id)
+    res.render('edit.ejs', {post})
+})
 // PUT	/blog/:id	Update	update	Update a specific post’s details.
+app.put('/blog/:id', async (req, res)=>{
+    await Post.findByIdAndUpdate(req.params.id, {
+        title: req.body['post-title'],
+        body: req.body['post-body']
+    })
+    res.redirect(`/blog`)
+})
 
 // DELETE	/blog/:id	Delete	delete	Remove a specific post from the list.
 app.delete('/blog/:id', async (req, res)=>{

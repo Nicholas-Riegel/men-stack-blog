@@ -4,7 +4,7 @@
 HOME PAGE
 
 <% allPosts.forEach(x=>{ %>
-    <h1><%= x.title%></h1>
-    <p><%= x.body%></p>
+    <h1><a href='/blog/<%= x._id%>'><%= x.title%></a></h1>
 <% }) %>
+
 <%- include('partials/foot')%>
